@@ -10,9 +10,9 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 // Maintenance Page
-app.use((req, res, next) => {
-    res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs');
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -53,6 +53,12 @@ app.get('/about', (req, res) => {
     //res.send('<h1>Hello Express</h1>');
     res.render('about.hbs', {
         pageTitle: 'About Page'
+    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Page'
     });
 });
 
